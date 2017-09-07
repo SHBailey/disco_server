@@ -17,3 +17,8 @@ config :disco_server, DiscoServer.Repo,
   database: "disco_server_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Do not use the below config in production, it will make the hashing algorithim much weaker. It is here only to speed up testing.
+config :argon2_elixir,
+  t_cost: 2,
+  m_cost: 12
